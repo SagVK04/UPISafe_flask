@@ -1,12 +1,14 @@
 from flask import Flask,request,jsonify
 import pickle
 import numpy as np
+import streamlit as st
 
 model = pickle.load(open('fraud_detector.pkl','rb'))
 app = Flask(__name__)
 
-@app.route('/predict',methods=['POST'])
+@app.route('/',methods=['POST'])
 def predict():
+    st.header("Hello!")
     amount = request.form.get('amount')
     time = request.form.get('time')
     date = request.form.get('date')
