@@ -1,1 +1,1 @@
-https://upisafemodel.streamlit.app/
+https://upisafe-flask-giuq.onrender.com
