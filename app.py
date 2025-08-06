@@ -19,7 +19,7 @@ def predict():
     input_query = np.array([[float(amount), int(time), int(date), int(platform), int(transaction_type)]])
 
     # Make the prediction
-    result = model.predict(input_query)[0]
+    result = model.predict(input_query)
 
     return jsonify({'Fraud Possibility': str(result)})
 
