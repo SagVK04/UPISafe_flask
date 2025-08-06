@@ -6,8 +6,9 @@ model = pickle.load(open('fraud_detector.pkl', 'rb'))
 app = Flask(__name__)
 
 # This is the endpoint that receives data
-@app.route('/predict', methods=['POST'])
+@app.route('/', methods=['POST'])
 def predict():
+    print("Hello World!")
     amount = request.form.get('amount')
     time = request.form.get('time')
     date = request.form.get('date')
