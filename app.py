@@ -23,5 +23,3 @@ def predict():
     result = model.predict(input_query)[0]
 
     return jsonify({'Fraud Possibility': str(result)})
-if __name__ == "__main__":
-    app.run()
