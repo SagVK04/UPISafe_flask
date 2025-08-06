@@ -5,10 +5,6 @@ import numpy as np
 model = pickle.load(open('fraud_detector.pkl','rb'))
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return "Hello World"
-
 @app.route('/predict',methods=['POST'])
 def predict():
     amount = request.form.get('amount')
