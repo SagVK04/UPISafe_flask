@@ -9,14 +9,14 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def predict():
     print("Hello World!")
-    amt= request.form.get('amount')
+    amount= request.form.get('amount')
     time = request.form.get('time')
     date = request.form.get('date')
     platform = request.form.get('platform')
     transaction_type = request.form.get('type')
 
     # Create the input array
-    input_query = np.array([[float(amt), int(time), int(date)]])
+    input_query = np.array([[float(amount), int(time), int(date)]])
 
     # Make the prediction
     result = model.predict(input_query)
