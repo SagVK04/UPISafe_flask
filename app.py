@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import pickle
 import numpy as np
 
-model = pickle.load(open('fraud_detector.pkl', 'rb'))
+model = pickle.load(open('fraud_detector_1.pkl', 'rb'))
 app = Flask(__name__)
 
 # This is the endpoint that receives data
@@ -16,7 +16,7 @@ def predict():
     transaction_type = request.form.get('type')
 
     # Create the input array
-    input_query = np.array([[float(amount), int(time), int(date), int(platform), int(transaction_type)]])
+    input_query = np.array([[float(amount), int(time), int(date)]])
 
     # Make the prediction
     result = model.predict(input_query)
