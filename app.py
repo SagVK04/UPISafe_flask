@@ -12,8 +12,6 @@ def predict():
     amount= request.form.get('amount')
     time = request.form.get('time')
     date = request.form.get('date')
-    platform = request.form.get('platform')
-    transaction_type = request.form.get('type')
 
     # Create the input array
     # Make the prediction
