@@ -3,8 +3,7 @@ from sklearn import tree
 import pickle
 
 df = pd.read_csv('final_transactions.csv')
-input_features = ['Amount', 'Date', 'Transaction Time']
-input_data = df[input_features]
+input_data = df.drop(columns=["Fraud Possibility"])
 target = df['Fraud Possibility']
 print(input_data.head())
 
@@ -16,8 +15,8 @@ target_test = target[:-1200]
 
 model = tree.DecisionTreeClassifier()
 model.fit(input_data,target)
-print(model.predict([[ 547,3082025,1509]]))
-res = model.predict([[ 547,3082025,1509]])
+print(model.predict([[ 547,3082025,509]]))
+res = model.predict([[ 547,3082025,509]])
 if(res == 0):
     print("Possibly Safe!")
 else:
