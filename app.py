@@ -16,10 +16,8 @@ def predict():
     transaction_type = request.form.get('type')
 
     # Create the input array
-    input_query = np.array([[float(amount), int(time), int(date)]])
-
     # Make the prediction
-    result = model.predict(input_query)
+    result = model.predict(np.array([[int(amount), int(date), int(time)]]))
 
     return jsonify({'Fraud Possibility': str(result)})
 
