@@ -14,9 +14,10 @@ def predict():
     date = request.form.get('date')
 
     # Create the input array & Make the prediction
-    result = model.predict(np.array([[int(amount), int(date), int(time)]]))
+    result = model.predict_proba(np.array([[int(date), int(amount),int(time)]]))
+    fraud_score = result[0][1]
 
-    return jsonify({'Fraud Possibility': str(result)})
+    return jsonify({'fraud_score': str(int(fraud_score*100))})
 
 if __name__ == "__main__":
     app.run()
