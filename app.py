@@ -20,8 +20,8 @@ def predict():
     result_1 = model.predict(np.array([[int(date), int(amount),int(time)]]))
     fin_res = result_1[0]
 
-    return jsonify({'fraud_result': str(fin_res)},
-                   {'fraud_score': str(int(fraud_score*100))}
+    return jsonify({'fraud_result': str(fin_res),
+                    'fraud_score': str(int(fraud_score*100))}
                    )
 
 if __name__ == "__main__":
