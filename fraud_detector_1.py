@@ -18,7 +18,7 @@ input_test = input_data.iloc[-1200:] #last 1200 elements
 target_train = target.iloc[:4800]
 target_test = target.iloc[-1200:]
 
-model = KNeighborsClassifier(n_neighbors=10)
+model = KNeighborsClassifier(n_neighbors=3)
 model.fit(input_train,target_train)
 
 
@@ -28,8 +28,8 @@ model.fit(input_train,target_train)
 #10/1/2023	Misc	338000000000	10/1/2023	110	12:51	0
 
 
-prediction = model.predict_proba([[11112015,9099,2300]])
-pred_res = model.predict([[11112015,9099,2300]])
+prediction = model.predict_proba([[13092022,191,1203]])
+pred_res = model.predict([[13092022,191,1203]])
 if pred_res == 0:
     print(f"Predicted Result: Safe!")
 if pred_res == 1:
