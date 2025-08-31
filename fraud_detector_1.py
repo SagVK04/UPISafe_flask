@@ -28,8 +28,8 @@ model.fit(input_train,target_train)
 #10/1/2023	Misc	338000000000	10/1/2023	110	12:51	0
 
 
-prediction = model.predict_proba([[13092022,191,1203]])
-pred_res = model.predict([[13092022,191,1203]])
+prediction = model.predict_proba([[4062018,4500,1021]])
+pred_res = model.predict([[4062018,4500,1021]])
 if pred_res == 0:
     print(f"Predicted Result: Safe!")
 if pred_res == 1:
