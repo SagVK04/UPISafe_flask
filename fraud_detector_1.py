@@ -22,14 +22,8 @@ model = KNeighborsClassifier(n_neighbors=3)
 model.fit(input_train,target_train)
 
 
-#print(model.predict([[ 512023,36950,1947]]))
-#res = model.predict([[ 512023,36950,1947]])
-#pd.DataFrame([[ 112023,3950,1246]], columns=input_data.columns)
-#10/1/2023	Misc	338000000000	10/1/2023	110	12:51	0
-
-
-prediction = model.predict_proba([[4062018,4500,1021]])
-pred_res = model.predict([[4062018,4500,1021]])
+prediction = model.predict_proba([[582017,5656,630]])
+pred_res = model.predict([[582017,5656,630]])
 if pred_res == 0:
     print(f"Predicted Result: Safe!")
 if pred_res == 1:
