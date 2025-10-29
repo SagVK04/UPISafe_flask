@@ -29,6 +29,7 @@ if pred_res == 0:
 if pred_res == 1:
     print(f"Predicted Result: Fraud!")
 
+print(prediction[0])
 fraud_pred = prediction[0][1]
 print(f"Risk Score: {fraud_pred * 100:.2f}%")
 print()
